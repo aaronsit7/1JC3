@@ -66,7 +66,9 @@ init xs = reverse (tail (reverse xs))
 -- xs !! 4 == ERROR
 --------------------------------------------------------------------------------
 (!!) :: [a] -> Int -> a
-xs !! n = head (drop n xs)
+xs !! n
+  | n < 0 = error "Negative index"
+  | otherwise = head (drop n xs)
 
 -- Exercise D
 --------------------------------------------------------------------------------
