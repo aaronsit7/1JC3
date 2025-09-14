@@ -1,0 +1,12 @@
+? /Users/aaronsit/Developer/1JC3/Exercises/HaskellExercises02/.stack-work/dist/x86_64-osx/ghc-9.8.4/build/HaskellExercises02-test/autogen/Paths_HaskellExercises02.hs
+: hash: 4baa8b4d89c093b5ebab365cf0801b4d1ee9d93caa9b52b5f10b761301e108de
+? /Users/aaronsit/Developer/1JC3/Exercises/HaskellExercises02/.stack-work/dist/x86_64-osx/ghc-9.8.4/build/HaskellExercises02-test/autogen/cabal_macros.h
+: hash: e1cabd0d3fe4b339c0f1df4ddd0c78c23e89c056af7b761e490eb0288a1b0afc
+/Users/aaronsit/Developer/1JC3/Exercises/HaskellExercises02/HaskellExercises02.cabal:
+  hash: 3aa8c9aae5dff6b6e3833260870cf542085dc3b9b5ef80f9705fdee3124cf462
+/Users/aaronsit/Developer/1JC3/Exercises/HaskellExercises02/package.yaml:
+  hash: 1c3221d9dd694ded07d2ed55fd946c2a2f95d3991596b4f6e7d72627f81b1a18
+/Users/aaronsit/Developer/1JC3/Exercises/HaskellExercises02/test/Spec.hs:
+  hash: 072ec874532840fe3645699fac45ae4d2fc35dae53b04e95c4a66da17185c43b
+/usr/local/lib/ghc-9.8.4/lib/x86_64-osx-ghc-9.8.4/rts-1.0.2/include/ghcversion.h:
+  hash: 95162794a3bf5e6167631fdd41a509846597231d523d0f21a76713b1f801373c
