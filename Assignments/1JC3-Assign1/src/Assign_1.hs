@@ -27,7 +27,7 @@ module Assign_1 where
 -- Name: TODO add name
 -- Date: TODO add date
 macid :: String
-macid = "TODO"
+macid = "sita1"
 
 (***) :: Double -> Double -> Double
 x *** y = if x >= 0 then x ** y else -((-x) ** y)
@@ -41,61 +41,95 @@ x === y =
  - cubicQ
  - -----------------------------------------------------------------
  - Description:
- -   TODO add comments
+ -   Computes the Q parameter to solve cubic equations.
+ -   For a cubic ax^3 + bx^2 + cx + d = 0, Q = (3ac - b^2) / (9a^2)
  -}
 cubicQ :: Rational -> Rational -> Rational -> Rational
-cubicQ a b c = error "TODO"
+cubicQ a b c = (3 * a * c - b * b) / (9 * a * a)
 
 {- -----------------------------------------------------------------
  - cubicR
  - -----------------------------------------------------------------
  - Description:
- -   TODO add comments
+ -   Computes the R parameter to solve cubic equations.
+ -   For a cubic ax^3 + bx^2 + cx + d = 0, R = (9abc - 27a^2d - 2b^3) / (54a^3)
  -}
 cubicR :: Rational -> Rational -> Rational -> Rational -> Rational
-cubicR a b c d = error "TODO"
+cubicR a b c d = (9 * a * b * c - 27 * a * a * d - 2 * b * b * b) / (54 * a * a * a)
 
 {- -----------------------------------------------------------------
  - cubicDiscSign
  - -----------------------------------------------------------------
  - Description:
- -   TODO add comments
+ -   Computes the sign of the discriminant Q^3 + R^2 for a cubic equation.
+ -   Returns -1 if negative (3 real roots), 0 if zero (repeated roots), 
+ -   1 if positive (1 real root)
  -}
 cubicDiscSign :: Rational -> Rational -> Int
 cubicDiscSign q r =
-  let disc = q^^3 + r^^2
-  in error "TODO"
+  let disc = q*q*q + r*r
+  in if disc < 0 then -1
+     else if disc > 0 then 1
+     else 0
 
 {- -----------------------------------------------------------------
  - cubicS
  - -----------------------------------------------------------------
  - Description:
- -   TODO add comments
+ -   Computes the S parameter: S = cuberoot(R + sqrt(Q^3 + R^2))
+ -   Uses the custom (***) operator for signed cube roots
  -}
 cubicS :: Rational -> Rational -> Double
-cubicS q r = error "TODO"
+cubicS q r = 
+  let qDouble = fromRational q
+      rDouble = fromRational r
+      disc = qDouble*qDouble*qDouble + rDouble*rDouble
+  in (rDouble + sqrt disc) *** (1/3)
 
 {- -----------------------------------------------------------------
  - cubicT
  - -----------------------------------------------------------------
  - Description:
- -   TODO add comments
+ -   Computes the T parameter: T = cuberoot(R - sqrt(Q^3 + R^2))
+ -   Uses the custom (***) operator for signed cube roots
  -}
 cubicT :: Rational -> Rational -> Double
-cubicT q r = error "TODO"
+cubicT q r = 
+  let qDouble = fromRational q
+      rDouble = fromRational r
+      disc = qDouble*qDouble*qDouble + rDouble*rDouble
+  in (rDouble - sqrt disc) *** (1/3)
 
 {- -----------------------------------------------------------------
  - cubicRealSolutions
  - -----------------------------------------------------------------
  - Description:
- -   TODO add comments
+ -   Finds all real solutions to the cubic equation ax^3 + bx^2 + cx + d = 0.
+ -   Returns a list of real solutions.
  -}
 cubicRealSolutions :: Rational -> Rational -> Rational -> Rational -> [Double]
 cubicRealSolutions a b c d
   | a == 0      = []
-  | sign == -1  = error "TODO"
-  | sign ==  0  = error "TODO"
-  | sign ==  1  = error "TODO"
+  | sign == -1  = -- Three real roots (use trigonometric method)
+      let qDouble = fromRational q
+          rDouble = fromRational r
+          rho = sqrt (-qDouble*qDouble*qDouble)
+          theta = acos (rDouble / rho)
+          bTerm = fromRational b / (3 * fromRational a)
+          x1 = 2 * (rho *** (1/3)) * cos (theta / 3) - bTerm
+          x2 = 2 * (rho *** (1/3)) * cos ((theta + 2*pi) / 3) - bTerm
+          x3 = 2 * (rho *** (1/3)) * cos ((theta + 4*pi) / 3) - bTerm
+      in [x1, x2, x3]
+  | sign ==  0  = -- Repeated roots
+      let bTerm = fromRational b / (3 * fromRational a)
+          rDouble = fromRational r
+          x1 = 2 * (rDouble *** (1/3)) - bTerm
+          x2 = -(rDouble *** (1/3)) - bTerm
+      in if abs rDouble < 1e-10 then [x2, x2, x2] else [x1, x2, x2]
+  | sign ==  1  = -- One real root
+      let bTerm = fromRational b / (3 * fromRational a)
+          x1 = s + t - bTerm
+      in [x1]
   | otherwise   = []
   where
     sign = cubicDiscSign q r
@@ -108,5 +142,3 @@ cubicRealSolutions a b c d
  - Test Cases
  - -----------------------------------------------------------------
  -}
-
--- TODO: Add Test Cases for each of your functions below here

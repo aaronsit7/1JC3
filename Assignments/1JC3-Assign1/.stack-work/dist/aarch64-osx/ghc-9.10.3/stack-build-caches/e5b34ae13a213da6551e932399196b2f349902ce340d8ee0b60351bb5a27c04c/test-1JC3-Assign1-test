@@ -1,0 +1,12 @@
+/Users/aaronsit/.ghcup/ghc/9.10.3/lib/ghc-9.10.3/lib/aarch64-osx-ghc-9.10.3/rts-1.0.2/include/ghcversion.h:
+  hash: 7590ea01e313d089c303211ba85b0e4454627be40dcb88be287ed32f7e97187f
+? /Users/aaronsit/Developer/1JC3/Assignments/1JC3-Assign1/.stack-work/dist/aarch64-osx/ghc-9.10.3/build/1JC3-Assign1-test/autogen/Paths_1JC3_Assign1.hs
+: hash: 6eb88b9b38f243b62bef93dc05fa84832e175f7a7226a71c6c2326b248519ffb
+? /Users/aaronsit/Developer/1JC3/Assignments/1JC3-Assign1/.stack-work/dist/aarch64-osx/ghc-9.10.3/build/1JC3-Assign1-test/autogen/cabal_macros.h
+: hash: 19cf6941aaa45b198ab6fc4e38d29291f4bd7355f4186ffe997973a6a5597979
+/Users/aaronsit/Developer/1JC3/Assignments/1JC3-Assign1/1JC3-Assign1.cabal:
+  hash: 0e226186501eb50f6ececd2865c4920dd4c86cb74b8fff66df8bc3694c954e56
+/Users/aaronsit/Developer/1JC3/Assignments/1JC3-Assign1/package.yaml:
+  hash: 1523eb68707bf466aac2b74f8d0f48dbe9ef928c03dbfa293395fded67f19a19
+/Users/aaronsit/Developer/1JC3/Assignments/1JC3-Assign1/test/Spec.hs:
+  hash: 4438790baa22a60e55d77aef915347781c98a93c280d5cd928709a8be9a839dc
