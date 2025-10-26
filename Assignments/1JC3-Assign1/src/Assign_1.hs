@@ -24,8 +24,8 @@ module Assign_1 where
 -- 4) REPLACE macid = "TODO" WITH YOUR ACTUAL MACID (EX. IF YOUR MACID IS jim THEN macid = "jim")
 -----------------------------------------------------------------------------------------------------------
 
--- Name: TODO add name
--- Date: TODO add date
+-- Name: Aaron Sit
+-- Date: October 9, 2025
 macid :: String
 macid = "sita1"
 
@@ -140,5 +140,45 @@ cubicRealSolutions a b c d
 
 {- -----------------------------------------------------------------
  - Test Cases
+ - Function name: cubicQ
+  - Test cases:
+  -   cubicQ 1 6 11
+  -     Expected output: 1
+  -   cubicQ 2 3 4
+  -     Expected output: -0.020833333333333332
+ - Function name: cubicR
+  - Test cases:
+  -   cubicR 1 6 11 6
+  -     Expected output: -1
+  -   cubicR 2 3 4 5
+  -     Expected output: -0.16276041666666666
+  - Function name: cubicDiscSign
+  - Test cases:
+  -   cubicDiscSign 1 (-1)
+  -     Expected output: 1
+  -   cubicDiscSign 0 0
+  -     Expected output: 0
+  -   cubicDiscSign (-1) 0
+  -     Expected output: -1
+  - Function name: cubicS
+  - Test cases:
+  -   cubicS 1 (-1)
+  -     Expected output: 1.0
+  -   cubicS (-1) 0
+  -     Expected output: 0.0
+  - Function name: cubicT
+  - Test cases:   
+  -   cubicT 1 (-1)
+  -     Expected output: 1.0
+  -   cubicT (-1) 0
+  -     Expected output: 0.0    
+  - Function name: cubicRealSolutions
+  - Test cases:
+  -   cubicRealSolutions 1 6 11 6
+  -     Expected output: [-1.0,-2.0,-3.0]
+  -   cubicRealSolutions 1 (-3) 3 (-1)
+  -     Expected output: [1.0,1.0,1.0]
+  -   cubicRealSolutions 1 0 0 1
+  -     Expected output: [-1.0]
  - -----------------------------------------------------------------
  -}

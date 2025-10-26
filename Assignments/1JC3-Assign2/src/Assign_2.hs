@@ -24,10 +24,10 @@ module Assign_2 where
 -- 4) REPLACE macid = "TODO" WITH YOUR ACTUAL MACID (EX. IF YOUR MACID IS jim THEN macid = "jim")
 -----------------------------------------------------------------------------------------------------------
 
--- Name: TODO add name
--- Date: TODO add date
+-- Name: Aaron Sit
+-- Date: October 17, 2025
 macid :: String
-macid = "TODO"
+macid = "sita1"
 
 type GaussianRat = (Rational,Rational)
 
@@ -38,7 +38,7 @@ type GaussianRat = (Rational,Rational)
  -   TODO add comments
  -}
 gaussReal :: GaussianRat -> Rational
-gaussReal x = error "TODO implement gaussReal"
+gaussReal (x, _) = x
 
 {- -----------------------------------------------------------------
  - gaussImag
@@ -47,7 +47,7 @@ gaussReal x = error "TODO implement gaussReal"
  -   TODO add comments
  -}
 gaussImag :: GaussianRat -> Rational
-gaussImag x = error "TODO implement gaussImag"
+gaussImag (_, y) = y
 
 {- -----------------------------------------------------------------
  - gaussConj
@@ -56,7 +56,7 @@ gaussImag x = error "TODO implement gaussImag"
  -   TODO add comments
  -}
 gaussConj :: GaussianRat -> GaussianRat
-gaussConj x = error "TODO implement gaussConj"
+gaussConj (x, y) = (x, -y)
 
 {- -----------------------------------------------------------------
  - gaussAdd
@@ -65,7 +65,7 @@ gaussConj x = error "TODO implement gaussConj"
  -   TODO add comments
  -}
 gaussAdd :: GaussianRat -> GaussianRat -> GaussianRat
-gaussAdd x y = error "TODO implement gaussAdd"
+gaussAdd (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
 
 
 {- -----------------------------------------------------------------
@@ -75,7 +75,7 @@ gaussAdd x y = error "TODO implement gaussAdd"
  -   TODO add comments
  -}
 gaussMul :: GaussianRat -> GaussianRat -> GaussianRat
-gaussMul x y = error "TODO implement gaussMul"
+gaussMul (x1, y1) (x2, y2) = (x1 * x2 - y1 * y2, x1 * y2 + y1 * x2)
 
 
 {- -----------------------------------------------------------------
@@ -85,7 +85,8 @@ gaussMul x y = error "TODO implement gaussMul"
  -   TODO add comments
  -}
 gaussRecip :: GaussianRat -> GaussianRat
-gaussRecip x = error "TODO implement gaussNorm"
+gaussRecip (x, y) = (x / d, -y / d)
+  where d = x^2 + y^2
 
 {- -----------------------------------------------------------------
  - gaussNorm
@@ -94,8 +95,7 @@ gaussRecip x = error "TODO implement gaussNorm"
  -   TODO add comments
  -}
 gaussNorm :: GaussianRat -> Rational
-gaussNorm x = error "TODO implement gaussNorm"
-
+gaussNorm (x, y) = x^2 + y^2
 {- -----------------------------------------------------------------
  - gaussAddList
  - -----------------------------------------------------------------
@@ -103,7 +103,9 @@ gaussNorm x = error "TODO implement gaussNorm"
  -   TODO add comments
  -}
 gaussAddList :: [GaussianRat] -> GaussianRat
-gaussAddList x = error "TODO implement gaussAddList"
+gaussAddList [] = (0, 0)
+gaussAddList ((x, y):xs) = (x + x', y + y')
+  where (x', y') = gaussAddList xs
 
 {- -----------------------------------------------------------------
  - gaussMulList
@@ -112,7 +114,8 @@ gaussAddList x = error "TODO implement gaussAddList"
  -   TODO add comments
  -}
 gaussMulList :: [GaussianRat] -> GaussianRat
-gaussMulList x = error "TODO implement gaussMulList"
+gaussMulList [] = (1, 0)
+gaussMulList ((x, y):xs) = gaussMul (x, y) (gaussMulList xs)
 
 {- ------------------------------------------------------------------------
  - gaussCircle
@@ -121,4 +124,4 @@ gaussMulList x = error "TODO implement gaussMulList"
  -   TODO add comments
  -}
 gaussCircle :: [GaussianRat] -> Rational -> [GaussianRat]
-gaussCircle x y = error "TODO implement gaussCircle"
+gaussCircle xs r = filter (\(x, y) -> gaussNorm (x, y) == r) xs
