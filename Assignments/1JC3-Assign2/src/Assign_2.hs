@@ -137,55 +137,55 @@ gaussCircle xs r = filter (\(x, y) -> gaussNorm (x, y) == r) xs
  - Function: gaussConj
  - Test Case #: 2
  - Input: (0, 0)
- - Expected Output: (0, 0)
+ - Expected Output: (0 % 1, 0 % 1)
  - Actual Output: (0 % 1, 0 % 1)
  -  
  - Function: gaussConj
  - Test Case #: 3
  - Input: (-2, 0)
- - Expected Output: (-2, 0)
+ - Expected Output: ((-2) % 1, 0 % 1)
  - Actual Output: ((-2) % 1, 0 % 1)
  -
  - Function: gaussAdd
  - Test Case #: 1
  - Input: (0, 0)(0, 0)
- - Expected Output: (0, 0)
+ - Expected Output: (0 % 1, 0 % 1)
  - Actual Output: (0 % 1, 0 % 1)
  -
  - Function: gaussAdd
  - Test Case #: 2
  - Input: (0, 0)(5, -3)
- - Expected Output: (5, -3)
+ - Expected Output: (5 % 1, (-3) % 1)
  - Actual Output: (5 % 1, (-3) % 1)
  -
  - Function: gaussAdd
  - Test Case #: 3
  - Input: (-1, -1)(1, 1)
- - Expected Output: (0, 0)
+ - Expected Output: (0 % 1, 0 % 1)
  - Actual Output: (0 % 1, 0 % 1)
  -
  - Function: gaussMul
  - Test Case #: 1
  - Input: (1, 2)(3, 4)
- - Expected Output: (-5, 10)
+ - Expected Output: ((-5) % 1, 10 % 1)
  - Actual Output: ((-5) % 1, 10 % 1)
  -
  - Function: gaussMul
  - Test Case #: 2
  - Input: (0, 0)(5, 6)
- - Expected Output: (0, 0)
+ - Expected Output: (0 % 1, 0 % 1)
  - Actual Output: (0 % 1, 0 % 1)
  -
  - Function: gaussMul
  - Test Case #: 3
  - Input: (2, 3)(4, -5)
- - Expected Output: (23, 2)
+ - Expected Output: (23 % 1, 2 % 1)
  - Actual Output: (23 % 1, 2 % 1)
  -
  - Function: gaussRecip
  - Test Case #: 1
  - Input: (1, 2)
- - Expected Output: (1/5, -2/5)
+ - Expected Output: (1 % 5, (-2) % 5)
  - Actual Output: (1 % 5, (-2) % 5)
  -
  - Function: gaussRecip
@@ -197,73 +197,73 @@ gaussCircle xs r = filter (\(x, y) -> gaussNorm (x, y) == r) xs
  - Function: gaussRecip
  - Test Case #: 3
  - Input: (0, 1)
- - Expected Output: (0, -1)
+ - Expected Output: (0 % 1, (-1) % 1)
  - Actual Output: (0 % 1, (-1) % 1)
  -
  - Function: gaussNorm
  - Test Case #: 1
  - Input: (3, 4)
- - Expected Output: 25
+ - Expected Output: 25 % 1
  - Actual Output: 25 % 1
  -
  - Function: gaussNorm
  - Test Case #: 2
  - Input: (1, 1)
- - Expected Output: 2
+ - Expected Output: 2 % 1
  - Actual Output: 2 % 1
  -
  - Function: gaussNorm
  - Test Case #: 3
  - Input: (0, 0)
- - Expected Output: 0
+ - Expected Output: 0 % 1
  - Actual Output: 0 % 1
  -
  - Function: gaussAddList
  - Test Case #: 1
  - Input: [(1, 2), (3, 4), (5, 6)]
- - Expected Output: (9, 12)
+ - Expected Output: (9 % 1, 12 % 1)
  - Actual Output: (9 % 1, 12 % 1)
  -
  - Function: gaussAddList
  - Test Case #: 2
  - Input: []
- - Expected Output: (0, 0)
+ - Expected Output: (0 % 1, 0 % 1)
  - Actual Output: (0 % 1, 0 % 1)
  -
  - Function: gaussAddList
  - Test Case #: 3
  - Input: [(-1, -1), (1, 2)]
- - Expected Output: (2, 1)
+ - Expected Output: (0 % 1, 1 % 1)
  - Actual Output: (0 % 1, 1 % 1)
  -
  - Function: gaussMulList
  - Test Case #: 1
  - Input: [(1, 2), (3, 4), (5, 6)]
- - Expected Output: (-85, 20)
+ - Expected Output: (-85 % 1, 20 % 1)
  - Actual Output: ((-85) % 1, 20 % 1)
  -
  - Function: gaussMulList
  - Test Case #: 2
  - Input: [(0, 1), (0, 1)]
- - Expected Output: (-1, 0)
+ - Expected Output: (-1 % 1, 0 % 1)
  - Actual Output: ((-1) % 1, 0 % 1)
  -
  - Function: gaussMulList
  - Test Case #: 3
  - Input: []
- - Expected Output: (1, 0)
+ - Expected Output: (1 % 1, 0 % 1)
  - Actual Output: (1 % 1, 0 % 1)
  -
  - Function: gaussCircle
  - Test Case #: 1
  - Input: [(1, 2), (3, 4), (0, 5)] 25
- - Expected Output: [(3, 4), (0, 5)]
+ - Expected Output: [(3 % 1, 4 % 1), (0 % 1, 5 % 1)]
  - Actual Output: [(3 % 1, 4 % 1), (0 % 1, 5 % 1)]
  -
  - Function: gaussCircle
  - Test Case #: 2
  - Input: [(0, 0), (1, 0), (0, 1)] 0
- - Expected Output: [(0, 0)]
+ - Expected Output: [(0 % 1, 0 % 1)]
  - Actual Output: [(0 % 1, 0 % 1)]
  -
  - Function: gaussCircle
