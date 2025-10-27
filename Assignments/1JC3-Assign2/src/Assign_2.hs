@@ -133,11 +133,13 @@ gaussCircle xs r = filter (\(x, y) -> gaussNorm (x, y) == r) xs
  - Input: (3, 4)
  - Expected Output: (3, -4)
  - Actual Output: (3 % 1, (-4) % 1)
+ -
  - Function: gaussConj
  - Test Case #: 2
  - Input: (0, 0)
  - Expected Output: (0, 0)
  - Actual Output: (0 % 1, 0 % 1)
+ -  
  - Function: gaussConj
  - Test Case #: 3
  - Input: (-2, 0)
